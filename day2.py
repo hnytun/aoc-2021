@@ -1,7 +1,25 @@
-file1 = open('input/input1_sample', 'r')
+file1 = open('input/input2', 'r')
 lines = file1.read().splitlines()
 
-
-intLines= [int(i) for i in lines]
-print(lines[1]+lines[2])
-print(intLines[1]+intLines[2])
+print(lines)
+#part 1 and 2, commented lines is part 1
+horizontal=0
+depth=0
+aim=0
+for line in lines:
+    direction = line.split(" ")[0]
+    distance = int(line.split(" ")[1])
+    print(direction,distance)
+    if(direction=="forward"):
+        horizontal+=distance
+        depth+=aim*distance
+        print("added " + str(distance) + " to horizontal")
+    elif(direction=="up"):
+        #depth-=distance
+        aim-=distance
+        print("decreased " + str(distance) + " to depth")
+    elif(direction=="down"):
+        #depth+=distance
+        aim+=distance
+        print("added " + str(distance) + " to depth")
+print(horizontal*depth)
