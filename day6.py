@@ -9,9 +9,7 @@ for line in lines:
             fishes.append(int(num))
 
 def shiftAll(cycle):
-
     temp=cycle.copy()
-
     cycle[8] = temp[0]
     cycle[7] = temp[8]
     cycle[6] = temp[7]
@@ -23,7 +21,6 @@ def shiftAll(cycle):
     cycle[1] = temp[2]
     cycle[0] = temp[1]
     return cycle
-
 
 def countFishes(existingFishes,days):
     sum=len(existingFishes)
@@ -38,19 +35,6 @@ def countFishes(existingFishes,days):
         cycle = shiftAll(cycle).copy()
     return sum
 
-
 print("part 1 (after 80 days): ",countFishes(fishes,80))
 print("part 2 (after 256 days): ",countFishes(fishes,256))
 
-
-
-
-
-
-
-
-
-
-
-
-#print(len(fishes))

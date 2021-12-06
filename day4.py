@@ -83,12 +83,3 @@ for bingoNum in drawn:
                 winSum = bingoboard.getSumOfUnmarked()*int(bingoNum)
                 bingoboards = [x for x in bingoboards if x!=bingoboard]
                 print(winSum)
-
-
-
-
-
-
-
-
-

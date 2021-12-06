@@ -28,7 +28,6 @@ def getline(x0, y0, x1, y1):
 print("-----------------")
 
 h,w = 1000,1000
-#map board
 
 xaxis=list()
 for x in range(0,w):
@@ -74,11 +73,3 @@ for xline in xaxis:
          if(yline > 1):
              counter+=1
 print(counter)
-
-
-
-
-
-
-
-

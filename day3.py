@@ -56,10 +56,3 @@ for i in range(0,12):
 print(int(lines[0],2)*int(lines2[0],2))
 
 
-
-
-
-#print(lines2)
-#print(GetGamma(["00100", "11110", "10110", "11111"]))
-#print(GetEpsilon(["00100", "11110", "10110", "11111"]))
-
