@@ -22,7 +22,6 @@ for i in range(len(matrix)):
 
 
 class Bingoboard:
-
     def __init__ (self,board):
         self.board = board
         self.marks = []
