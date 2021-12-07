@@ -1,10 +1,5 @@
 import re
 from collections import Counter
-def normalize_space(s):
-    """Return s stripped of leading/trailing whitespace
-    and with internal runs of whitespace replaced by a single SPACE"""
-    # This should be a str method :-(
-    return ' '.join(s.split())
 
 file1 = open('input/input4', 'r')
 
