@@ -63,7 +63,6 @@ class Bingoboard:
                 return True
         return False
 
-
 #make all bingoboards
 bingoboards=[]
 for board in boards:
