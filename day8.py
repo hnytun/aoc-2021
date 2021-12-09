@@ -32,21 +32,57 @@ def Decode(signal):
     else:
         return 404
 
-def DecodePart2(signals):
-    decoded=dict()
+def DecodePart2(signals,validCombos):
+
+
+    signals = sorted(signals,key=len)
+    #print(signals)
+    decoded={}
+    #set the ones we know from length
     for signal in signals:
+
+        if(IsValid(signal,validCombos) == False):
+           continue
         if(len(signal) == 2):
             decoded["1"] = signal
-            return 1
         elif(len(signal) == 4):
             decoded["4"] = signal
-            return 4
         elif(len(signal) == 3):
             decoded["7"] = signal
-            return 7
         elif(len(signal) == 7):
             decoded["8"] = signal
-            return 8
+
+
+
+
+
+
+        #if its 3, 5 or 2
+        if(len(signal) == 5):
+
+            if("1" in decoded and len(list(set(decoded["1"])&set(signal))) == 2):
+                decoded["3"] = signal
+            #elif("6" in decoded and len(list(set(decoded["6"])&set(signal))) == 5):
+            #    decoded["3"] = signal
+            elif("4" in decoded and len(list(set(decoded["4"])&set(signal))) == 3):
+                decoded["5"] = signal
+            else:
+                decoded["2"] = signal
+
+        if(len(signal) == 6):
+            if("1" in decoded and len(list(set(decoded["1"])&set(signal))) == 1):
+                decoded["6"] = signal
+            elif("4" in decoded and len(list(set(decoded["4"])&set(signal))) == 4):
+                decoded["9"] = signal
+            elif("8" in decoded and len(list(set(decoded["8"])&set(signal))) == 5):
+                decoded["9"] = signal
+            else:
+                decoded["0"] = signal
+
+
+
+
+
     return decoded
 
 
@@ -70,14 +106,31 @@ print("part 1: ", sum)
 
 #part 2:
 for pair in pairs:
-    split = pair[1].split(" ")
-    print(split)
+    print(DecodePart2(pair[1].split(" "),pair[0]))
 
 
+"""
+length 2 -> 1
 
+length 3 -> 7
 
+length 4 -> 4
 
+length 5 ->
 
+if 2 letters match with 1 it's 3,
 
+else if 3 letters match with 4 it's 5,
 
+else it's 2
 
+length 6 ->
+
+if 1 letter matches with 1 it's 6
+
+else if 4 letters match with 4 it's 9
+
+else it's 0
+
+length 7 -> 8
+"""
