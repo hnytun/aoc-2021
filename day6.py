@@ -1,4 +1,4 @@
-
+import time
 file1 = open('input/input6', 'r')
 lines = file1.read().splitlines()
 
@@ -35,6 +35,9 @@ def countFishes(existingFishes,days):
         cycle = shiftAll(cycle).copy()
     return sum
 
+start_time=time.perf_counter()
 print("part 1 (after 80 days): ",countFishes(fishes,80))
 print("part 2 (after 256 days): ",countFishes(fishes,256))
+end_time=time.perf_counter()
+print("elapsed time: ",end_time-start_time)
 
